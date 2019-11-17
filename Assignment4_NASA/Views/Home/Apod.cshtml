@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Assignment4_NASA.Models.Apod>
+
+@{
+    ViewData["Title"] = "Apod";
+}
+
+<h2>APOD- Astronomy Picture of the Day</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.explanation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hdurl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.media_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.service_version)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.url)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.explanation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.hdurl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.media_type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.service_version)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.url)
+                </td>
+            </tr>
+        }
+        @{
+            Model.Count();
+        }
+    </tbody>
+</table>
+<tr>
+    <td>
+        <a id="dbopt" asp-controller="Home" asp-action="PopulateApod"></a>
+    </td>
+</tr>

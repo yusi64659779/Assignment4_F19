@@ -1,0 +1,41 @@
+﻿@model Assignment4_F19.Models.Apods
+
+<h1>APO</h1>
+<hr />
+
+@foreach (var item in Model.data)
+{
+    <div>
+        <h4>
+            @Html.DisplayFor(modelItem => item.title)
+        </h4>
+        <div>
+            <h2>Date: </h2>
+            @Html.DisplayFor(modelItem => item.date)
+        </div>
+        <div>
+            <h5>Explanation: </h5>
+            @Html.DisplayFor(modelItem => item.explanation)
+        </div>
+        <div>
+            <h3>Hdurl: </h3>
+            @Html.DisplayFor(modelItem => item.hdurl)
+        </div>
+        <div>
+            <h3>Media Type: </h3>
+            @Html.DisplayFor(modelItem => item.media_type)
+        </div>
+        <div>
+            <h6>Service Version: </h6>
+            @Html.DisplayFor(modelItem => item.service_version)
+        </div>
+        <a href="@item.url" target="_blank">
+            @Html.DisplayFor(modelItem => item.url)
+        </a>
+    </div>
+    <br />
+}
+
+<script>
+    alertDbSave(@ViewBag.dbSuccessComp);
+</script>
